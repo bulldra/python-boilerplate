@@ -17,4 +17,4 @@ Python でツールを作る場合の最低限のコード
 
 など
 
-参考： https://www.python-boilerplate.com/py3+executable
+参考： [Python 3 boilerplate - python-boilerplate.com](https://www.python-boilerplate.com/py3+executable)
