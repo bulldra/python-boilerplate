@@ -18,3 +18,17 @@ Python でツールを作る場合の最低限のコード
 など
 
 参考： [Python 3 boilerplate - python-boilerplate.com](https://www.python-boilerplate.com/py3+executable)
+
+## 使い方
+
+* 今回用のリポジトリ作成
+
+```bash
+# git clone https://github.com/bulldra/python-boilerplate.git project
+# cd project
+# git remote add origin https://github.com/xxx/xxx.git
+# git branch -m master
+# git add .
+# git commit -m 'clone from boilerplate'
+# git push origin master
+```
