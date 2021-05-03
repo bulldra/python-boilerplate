@@ -26,7 +26,10 @@ Python でツールを作る場合の最低限のコード
 ```bash
 # git clone https://github.com/bulldra/python-boilerplate.git project
 # cd project
-# git remote add origin https://github.com/xxx/xxx.git
+# git init
+# git remote -v
+# git remote set-url origin https://github.com/xxx/xxx.git
+# git remote -v
 # git branch -m master
 # git add .
 # git commit -m 'clone from boilerplate'
