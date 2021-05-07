@@ -17,13 +17,15 @@ class Main:
 
     def main(self, args):
         self.logger.info(args)
+        self.execute()
 
     def execute(self):
         return True
 
 if(__name__ == '__main__'):
     parser = argparse.ArgumentParser()
-    parser.add_argument("--version", action="version", version="%(prog)s (version {version})".format(version=__version__))
+    parser.add_argument('--version', action='version', version=f'{__version__}')
 #    parser.add_argument("args1")
+#    parser.add_argument("--option1")
     args = parser.parse_args()
     Main().main(args)
