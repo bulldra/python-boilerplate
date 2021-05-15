@@ -16,10 +16,18 @@ def test_load_text():
     assert settings_list[1] == '    "logfile" : "../log/info.log"'
     assert settings_list[2] == '}'
 
+def test_build_path():
+    path = settings._build_path('../config/settings.json')
+    assert path == '/data/config/settings.json'
+
 def test_notfilepath_list():
-    settings_list = settings.load_text('../config/settings.jso')
-    assert settings_list == []
+    try:
+        settings.load_text('../config/settings.jso')
+    except FileNotFoundError as e:
+        assert str(e) == '/data/config/settings.jso'
 
 def test_notfilepath_json():
-    settings_dict = settings.load_json('../config/settings.jso')
-    assert settings_dict == {}
+    try:
+        settings.load_json('../config/settings.jso')
+    except FileNotFoundError as e:
+        assert str(e) == '/data/config/settings.jso'
