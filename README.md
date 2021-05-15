@@ -1,6 +1,6 @@
 # Pythonボイラープレート
 
-Python でツールを作る場合の最低限のコード
+Python Template Repository
 
 * .gitignore
 * docker によるインフラのコード化・コンテナ化
@@ -21,17 +21,14 @@ Python でツールを作る場合の最低限のコード
 
 ## 使い方
 
-* 今回用のリポジトリ作成
+* Use this template をクリックして新しいプロジェクトを作成
 
 ```bash
-# git clone https://github.com/bulldra/python-boilerplate.git project
-# cd project
+# mkdir {project}
+# cd {project}
 # git init
-# git remote -v
-# git remote set-url origin https://github.com/xxx/xxx.git
+# git remote add origin https://github.com//bulldra/template-test.git 
 # git remote -v
 # git branch -m master
-# git add .
-# git commit -m 'clone from boilerplate'
-# git push origin master
+# git pull origin master
 ```
