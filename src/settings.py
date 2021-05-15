@@ -13,9 +13,9 @@ def load_json_setting(path):
         return None
 
 def load_text_list(path):
-    result = []
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), path)
     if os.path.exists(path):
+        result = []
         with open(path, 'r') as conf:
             for line in conf.read().splitlines():
                 result.append(line)
@@ -24,4 +24,4 @@ def load_text_list(path):
         return None
 
 settings_dict = load_json_setting('../config/settings.json')
-secrets_dict = load_json_setting('../config/secrets.json')
+# secrets_dict = load_json_setting('../config/secrets.json')
