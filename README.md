@@ -1,6 +1,6 @@
 # Pythonボイラープレート
 
-Python でツールを作る場合の最低限のコード
+Python Template Repository
 
 * .gitignore
 * docker によるインフラのコード化・コンテナ化
