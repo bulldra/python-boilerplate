@@ -17,11 +17,11 @@ def load_text(path):
 
 def _build_path(path):
     abspath = os.path.join(os.path.dirname(os.path.abspath(__file__)), path)
-    path = os.path.abspath(path)
-    if os.path.exists(path):
-        return path
+    abspath = os.path.abspath(abspath)
+    if os.path.exists(abspath):
+        return abspath
     else:
-        raise FileNotFoundError(path)
+        raise FileNotFoundError(abspath)
 
 settings_dict = load_json('../config/settings.json')
 # secrets_dict = load_json('../config/secrets.json')
