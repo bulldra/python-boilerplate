@@ -15,7 +15,7 @@ class Main:
         self.logger = logzero.logger
 
     def main(self, args):
-        self.logger.info(args)
+        self.logger.info(f'{__file__} {__version__} {args}')
         self.execute()
 
     def execute(self):
@@ -24,7 +24,7 @@ class Main:
 if(__name__ == '__main__'):
     parser = argparse.ArgumentParser()
     parser.add_argument('--version', action='version', version=f'{__version__}')
-#    parser.add_argument("args1")
-#    parser.add_argument("--option1")
+#    parser.add_argument('args1')
+    parser.add_argument('--option', default='option')
     args = parser.parse_args()
     Main().main(args)
