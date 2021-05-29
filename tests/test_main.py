@@ -3,5 +3,6 @@ __version__ = "0.1.0"
 
 import main
 
+
 def test_main():
-    assert main.Main().execute() == True
+    assert(main.Main().execute())
