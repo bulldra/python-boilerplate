@@ -4,11 +4,16 @@ __version__ = "0.1.0"
 
 import os
 import json
+import pandas
 
 
 def load_json(path):
     with open(_build_path(path), 'r') as conf:
         return json.load(conf)
+
+
+def load_tsv(path):
+    return pandas.read_csv.load(_build_path(path))
 
 
 def _build_path(path):

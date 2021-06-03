@@ -27,8 +27,8 @@ if(__name__ == '__main__'):
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--version',
-        action='version', version=f'{__version__}')
+        action='version', version=f'{__version__}'
+    )
 #    parser.add_argument('args1')
     parser.add_argument('--option', default='option')
-    args = parser.parse_args()
-    Main().main(args)
+    Main().main(parser.parse_args())
