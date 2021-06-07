@@ -1,9 +1,0 @@
-name: template
-on: push
-
-jobs:
-  build:
-    name: greeting
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "hello, wolrd!"
