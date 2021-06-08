@@ -28,7 +28,10 @@ def test_build_path():
 
 
 def test_notfilepath_json():
+    dir = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.abspath(os.path.join(dir, '../config/settings.jso'))
+
     try:
         settings.load_json('../config/settings.jso')
     except FileNotFoundError as e:
-        assert(str(e) == '/data/config/settings.jso')
+        assert(str(e) == path)
