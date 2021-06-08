@@ -6,8 +6,6 @@ jobs:
     name: pytest
     runs-on: ubuntu-latest
     steps:
-      - run: mkdir /data
-      - run: cd /data
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
