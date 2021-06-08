@@ -3,7 +3,7 @@ on: push
 
 jobs:
   build:
-    name: greeting
+    name: pytest
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
