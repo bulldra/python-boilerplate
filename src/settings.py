@@ -17,8 +17,9 @@ def load_tsv(path):
 
 
 def _build_path(path):
-    abspath = os.path.join(os.path.dirname(os.path.abspath(__file__)), path)
-    abspath = os.path.abspath(abspath)
+    dir = os.path.dirname(os.path.abspath(__file__))
+    abspath = os.path.abspath(os.path.join(dir, path))
+
     if os.path.exists(abspath):
         return abspath
     else:

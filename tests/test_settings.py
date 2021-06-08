@@ -3,6 +3,7 @@
 __version__ = "0.1.0"
 
 import settings
+import os
 
 
 def test_config():
@@ -19,8 +20,11 @@ def test_logfile():
 
 
 def test_build_path():
-    path = settings._build_path('../config/settings.json')
-    assert(path == '/data/config/settings.json')
+    actual = settings._build_path('../config/settings.json')
+
+    dir = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.abspath(os.path.join(dir, '../config/settings.json'))
+    assert(path == actual)
 
 
 def test_notfilepath_json():
