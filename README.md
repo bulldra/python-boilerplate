@@ -27,8 +27,8 @@ Python Template Repository
 # mkdir {project}
 # cd {project}
 # git init
-# git remote add origin https://github.com/bulldra/template-test.git
+# git remote add origin https://github.com/{user}/{project}
 # git remote -v
-# git branch -m master
-# git pull origin master
+# git branch -m main
+# git pull origin main
 ```
