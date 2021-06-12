@@ -6,7 +6,6 @@ import argparse
 
 
 class Main:
-
     def main(self, args):
         self.execute()
 
@@ -20,6 +19,5 @@ if __name__ == '__main__':
         '--version',
         action='version', version=f'{__version__}'
     )
-#    parser.add_argument('args1')
     parser.add_argument('--option', default='option')
     Main().main(parser.parse_args())
