@@ -3,10 +3,20 @@
 __version__ = "0.1.0"
 
 import argparse
+import logzero
+import settings
 
 
 class Main:
+    def __init__(self):
+        logzero.logfile(
+            settings.logfile,
+            loglevel=20, maxBytes=1e6, backupCount=3
+        )
+        self.logger = logzero.logger
+
     def main(self, args):
+        self.logger.info(args)
         self.execute()
 
     def execute(self):
