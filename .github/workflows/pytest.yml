@@ -30,4 +30,5 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
       - run: mkdir ../work
+      - run: mkdir ../log
       - run: pytest -s ./tests/
