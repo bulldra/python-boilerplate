@@ -29,5 +29,5 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
-        - run: mkdir ../work
+      - run: mkdir ../work
       - run: pytest -s ./tests/
