@@ -14,13 +14,14 @@ on:
 
 jobs:
   unit-test:
-    timeout-minutes: 10
     name: pytest
+    timeout-minutes: 10
     runs-on: ubuntu-latest
+    container: python:3.9.5-slim-buster
     steps:
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.9.5
+#      - uses: actions/setup-python@v2
+#        with:
+#          python-version: 3.9.5
       - uses: actions/checkout@v2
       - run: mkdir ../work
       - run: python -m pip install --upgrade pip
