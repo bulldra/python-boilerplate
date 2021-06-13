@@ -23,7 +23,6 @@ jobs:
           python-version: 3.9.5
       - uses: actions/checkout@v2
       - run: mkdir ../work
-      - run: curl https://nlp100.github.io/data/popular-names.txt > ../work/popular-names.txt
       - run: python -m pip install --upgrade pip
       - run: pip install -r requirements.txt
       - run: pytest -s ./tests/
