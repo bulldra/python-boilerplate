@@ -17,10 +17,11 @@ jobs:
     name: pytest
     timeout-minutes: 10
     runs-on: ubuntu-latest
-    container: 
-      image: python:3.9.5-slim-buster
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+        with:
+        python-version: 3.9.5
       - id: cache
         uses: actions/cache@v2
         with:
