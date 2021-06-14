@@ -1,9 +1,8 @@
-name: Build and Publish Docker
-
+name: docker_push
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'Dockerfile'
 jobs:
