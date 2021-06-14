@@ -11,9 +11,6 @@ on:
   pull_request:
     branches:
         -main
-env:
-  IMAGE_NAME: ${{ github.repository }}
-
 jobs:
   docker_push:
     runs-on: ubuntu-latest
@@ -31,11 +28,11 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ env.IMAGE_NAME }}:latest
+            ghcr.io/${{ github.repository }}:latest
   unit-test:
     timeout-minutes: 10
     runs-on: ubuntu-latest
-    container: ghcr.io/${{ env.IMAGE_NAME }}:latest
+    container: ghcr.io/${{ github.repository }}:latest
     steps:
       - uses: actions/checkout@v2
       - run: pytest -s ./tests/
