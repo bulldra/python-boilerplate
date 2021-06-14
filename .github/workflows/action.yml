@@ -1,13 +1,20 @@
-name: docker_push
+name: pytest
 on:
   push:
     branches:
       - main
-#    paths:
-#      - 'Dockerfile'
+    paths:
+      - 'src/*'
+      - 'tests/*'
+      - 'config/*'
+      - '.github/workflows/*'
+  pull_request:
+    branches:
+        -main
 jobs:
-  build_and_push:
+  docker_push:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     env:
       IMAGE_NAME: ${{ github.repository }}
     steps:
@@ -24,3 +31,12 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ env.IMAGE_NAME }}:latest
+  unit-test:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: ${{ github.repository }}
+    container: ghcr.io/${{ env.IMAGE_NAME }}:latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: pytest -s ./tests/
