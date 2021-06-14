@@ -7,16 +7,16 @@ import os
 
 
 def test_config():
-    assert(settings.settings_dict['logfile'] == '../log/info.log')
+    assert(settings.settings_dict['logfile'] == '/data/log/info.log')
 
 
 def test_load_json():
     settings_dict = settings.load_json('../config/settings.json')
-    assert(settings_dict['logfile'] == '../log/info.log')
+    assert(settings_dict['logfile'] == '/data/log/info.log')
 
 
 def test_logfile():
-    assert(settings.logfile == '../log/info.log')
+    assert(settings.logfile == '/data/log/info.log')
 
 
 def test_build_path():
