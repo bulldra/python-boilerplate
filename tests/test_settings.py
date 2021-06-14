@@ -20,10 +20,9 @@ def test_logfile():
 
 
 def test_build_path():
-    actual = settings._build_path('../config/settings.json')
-
     dir = os.path.dirname(os.path.abspath(__file__))
     path = os.path.abspath(os.path.join(dir, '../config/settings.json'))
+    actual = settings._build_path('../config/settings.json')
     assert(path == actual)
 
 
