@@ -15,4 +15,5 @@ RUN pip3 install --upgrade pip \
     && pip3 install -r /tmp/requirements.txt \
     && rm /tmp/requirements.txt
 
-RUN mkdir /data
+RUN mkdir -p /data/work \
+  && mkdir -p /data/log
