@@ -1,1 +1,1 @@
-docker-compose run --entrypoint "pytest -s /data/tests/" python-boilerplate
+docker-compose run --entrypoint "pytest -s ./tests/" python-boilerplate
