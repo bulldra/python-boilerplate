@@ -17,6 +17,7 @@ jobs:
     name: pytest
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    container: ghcr.io/bulldra/python-docker/python-boilerplate:latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v1
