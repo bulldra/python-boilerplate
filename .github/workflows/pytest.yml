@@ -15,6 +15,10 @@ jobs:
   unit-test:
     timeout-minutes: 15
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: /data
     container: ghcr.io/${{ github.repository }}:latest
     steps:
       - uses: actions/checkout@v2
