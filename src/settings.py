@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 __version__ = "0.1.0"
 
-import os
 import json
+import os
+
 import pandas
 
 
 def load_json(path):
-    with open(_build_path(path), 'r') as conf:
+    with open(_build_path(path), "r") as conf:
         return json.load(conf)
 
 
@@ -17,7 +18,7 @@ def load_tsv(path):
 
 
 def _build_path(path):
-    dir = os.path.dirname(os.path.abspath(__file__))
+    dir = os.getcwd()
     abspath = os.path.abspath(os.path.join(dir, path))
 
     if os.path.exists(abspath):
@@ -26,5 +27,5 @@ def _build_path(path):
         raise FileNotFoundError(abspath)
 
 
-settings_dict = load_json('../config/settings.json')
-logfile = settings_dict['logfile']
+settings_dict = load_json("./config/settings.json")
+logfile = settings_dict["logfile"]
