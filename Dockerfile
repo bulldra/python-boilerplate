@@ -9,13 +9,12 @@ RUN apt-get update -y \
     && apt-get install -y git curl make xz-utils file sudo \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /tmp
-COPY ./requirements.txt /tmp/requirements.txt
-RUN pip3 install --upgrade pip \
-    && pip3 install -r /tmp/requirements.txt \
-    && rm /tmp/requirements.txt
-
 RUN mkdir /data
 WORKDIR /data
+COPY ./requirements.txt ./requirements.txt
+RUN pip3 install --upgrade pip \
+    && pip3 install -r ./requirements.txt \
+    && rm ./requirements.txt
+
 RUN mkdir /data/work \
     && mkdir /data/log
