@@ -19,4 +19,6 @@ jobs:
     steps:
       - run: pwd
       - uses: actions/checkout@v2
+      - run: cp -r . /data
       - run: pytest -s ./tests/
+        working-directory: /data
