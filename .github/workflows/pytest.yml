@@ -10,7 +10,7 @@ on:
       - '.github/workflows/*'
   pull_request:
     branches:
-        -main
+        - main
 jobs:
   unit-test:
     timeout-minutes: 15
